@@ -52,7 +52,7 @@ int main(void)
         printf("VISA\n");
     }else
     {
-        printf("fINVALID\n");
+        printf("INVALID\n");
     }
 
 }
