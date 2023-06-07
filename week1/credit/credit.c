@@ -37,10 +37,10 @@ int main(void)
 
     if (i != 13 && i != 15 && i != 16)
     {
-        printf("dINVALID\n");
+        printf("INVALID\n");
     }else if (output % 10 != 0)
     {
-        printf("oINVALID\n");
+        printf("INVALID\n");
     }else if (i == 15 && (start == 34 || start == 37))
     {
         printf("AMEX\n");
