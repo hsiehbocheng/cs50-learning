@@ -28,7 +28,7 @@ int main(void)
         }
         i ++;
         number /= 10;
-        if (number > 100)
+        if (number > 10)
         {
             start = number;
         }
@@ -37,19 +37,22 @@ int main(void)
 
     if (i != 13 && i != 15 && i != 16)
     {
-        printf("digital number INVALID with %i\n", i);
+        printf("dINVALID\n");
     }else if (output % 10 != 0)
     {
-        printf("output end withou 0 INVALID with output %ld\n", output);
+        printf("oINVALID\n");
     }else if (i == 15 && (start == 34 || start == 37))
     {
         printf("AMEX\n");
     }else if (i == 16 && (start >= 51 && start <= 55))
     {
         printf("MASTERCARD\n");
-    }else
+    }else if (start / 10 == 4)
     {
         printf("VISA\n");
+    }else
+    {
+        printf("fINVALID\n");
     }
 
 }
