@@ -14,11 +14,13 @@ class Student:
     def __str__(self): # print class 時回傳的字串
         return f'{self.name} from {self.house}'
     
-    @property
+    # Getter
+    # 定義 getter 與 setter 的好處是可以在設定值時，做一些檢查，例如 name 不可為空值
+    @property # 定義 getter，當呼叫 student.name 時，就會執行這個函數
     def name(self):
-        return self._name
+        return self._name # 加底線是為了讓 init 的 name 與這裡的函數 name 不衝突，但更改 self._name 會影響到 self.name
     
-    @name.setter
+    @name.setter # 定義 setter，當 name 被指定值，例如 student.name = 'Harry'，就會執行這個函數
     def name(self, name):
         if not name:
             raise ValueError("Name is required.")
