@@ -1,18 +1,26 @@
 def main():
-    student = get_student()
+    student = Student.get()
     # student.house = 'tp' # 因為有 getter 與 setter 避免改寫覆蓋
+    
     print(student)
     # print(f"{student.name} from {student.house}")
     print("Expecto Patronum: ", student.charm())
 
 class Student:
-    def __init__(self, name, house, patronus):
+    def __init__(self, name, house, patronus=None):
         self.name = name
         self.house = house
         self.patronus = patronus
 
     def __str__(self): # print class 時回傳的字串
         return f'{self.name} from {self.house}'
+    
+    @classmethod # 利用 classmethod，不需要實體化就可以呼叫，例如 Student.get()，並且回傳一個實體化的物件
+    def get(cls):
+        name = input("Name: ")
+        house = input("House: ")
+        patronus = input("Patronus: ")
+        return cls(name, house, patronus)
     
     # Getter
     # 定義 getter 與 setter 的好處是可以在設定值時，做一些檢查，例如 name 不可為空值
@@ -45,12 +53,6 @@ class Student:
             return "🐶"
         else:
             return "😀"
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    patronus = input("Patronus: ")
-    return Student(name, house, patronus)
 
 if __name__ == "__main__":
     main()
