@@ -1,10 +1,11 @@
 def main():
     student = Student.get()
     # student.house = 'tp' # 因為有 getter 與 setter 避免改寫覆蓋
-    
+
     print(student)
     # print(f"{student.name} from {student.house}")
     print("Expecto Patronum: ", student.charm())
+
 
 class Student:
     def __init__(self, name, house, patronus=None):
