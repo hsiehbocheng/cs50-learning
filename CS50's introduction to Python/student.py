@@ -10,7 +10,7 @@ def main():
 class Student:
     def __init__(self, name, house, patronus=None):
         self.name = name
-        self.house = house
+        self.house = house 
         self.patronus = patronus
 
     def __str__(self): # print class 時回傳的字串
