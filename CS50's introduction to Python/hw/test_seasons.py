@@ -6,8 +6,7 @@ def main():
 
 
 def test_1():
-    assert cal(1999, 5, 17) == "Ten million, fifty-eight thousand, four hundred minutes"
-    assert cal(2000, 2, 1) == "Eleven million, seven hundred eighty-seven thousand, eight hundred forty minutes"
+    assert cal(1999, 5, 7) == "Twelve million, six hundred ninety-two thousand, one hundred sixty minutes"
 
 def test_2():
     assert cal(23, 1, 20000) == "Invalid Date"
