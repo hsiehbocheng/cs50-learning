@@ -3,6 +3,7 @@ import inflect
 from datetime import datetime, timedelta
 import sys
 
+p = inflect.engine()
 
 def main():
     try:
@@ -11,10 +12,7 @@ def main():
     except ValueError:
         sys.exit("Invalid Date")
 
-    cal(year, month, day)
-    # today = date.today()
-    # print(str(today))
-    # print(date.today())
+    print(cal(year, month, day))
 
 def cal(year, month, day):
     today = date.today()
@@ -24,7 +22,9 @@ def cal(year, month, day):
         sys.exit("Invalid Date")
 
     diff = today - bday
-    print(int(diff.total_seconds() / 60))
+    minutes = int(diff.total_seconds() / 60)
+    msg = p.number_to_words(minutes, andword="") + " minutes"
+    return msg.capitalize()
 
 
 
